@@ -2,7 +2,8 @@
 
 describe("My Test Suite",function()
 {
-    it ("My 1st case", function(){
+    it ("My 1st case", function()
+    {
         // list all the test cases
        cy.visit("https://www.bigbasket.com/")
        cy.get("#input").type("Ca{enter}")
@@ -31,4 +32,5 @@ describe("My Test Suite",function()
        })
 
     })
+    
 })

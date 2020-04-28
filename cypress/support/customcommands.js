@@ -7,4 +7,3 @@ Cypress.Commands.add("productFunction",(product_name)=>
         cy.get("button.btn.btn-info").eq(index).click()
     })
 })
-export default Dynamic_code;

@@ -1,0 +1,119 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-04-27T17:17:45.495Z",
+    "end": "2020-04-27T17:17:58.789Z",
+    "duration": 13294,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "325767f6-f78a-465b-82c5-1bb36916bba1",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\Learn\\CypressFramework.js",
+      "file": "cypress\\integration\\examples\\Learn\\CypressFramework.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0e1a232e-9918-4e12-94a2-62d09942f094",
+          "title": "Framework",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test Hooks-basics",
+              "fullTitle": "Framework Test Hooks-basics",
+              "timedOut": null,
+              "duration": 7579,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homepage.pageurl();\nhomepage.getname().type(this.glob_data.name);\nhomepage.type_email().type(this.glob_data.email);\nhomepage.get_gender();\nhomepage.alias_name();\ncy.get(\"@namefield\").should('have.attr', 'minlength', '2');\nhomepage.radiobutton().each(function ($e1, index, $list) {\n  var text = $e1.text();\n  if (text.includes(\"Entrepreneur\")) {\n    cy.log(text);\n    homepage.radio_text().eq(index).should(\"have.attr\", 'type', 'radio').and(\"be.disabled\");\n  }\n});\nconsole.log(this.glob_data.product_name);\ncy.get(\":nth-child(2) > .nav-link\").click(); //searching for product and adding to cart\nthis.glob_data.product_name.forEach(function (element) // need to be altered\n{\n  cy.productFunction(element);\n});\nhomepage.checkout().click(); //clicking checkout after selecting the products\n// homepage.confirm_checkout().click() //Confirming checkout of product or cart page\n// homepage.country_confirm() // Entering the country to deliver",
+              "err": {},
+              "uuid": "59905cbd-f338-4d09-90b3-37341d257d05",
+              "parentUUID": "0e1a232e-9918-4e12-94a2-62d09942f094",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adding the price in Checkout",
+              "fullTitle": "Framework Adding the price in Checkout",
+              "timedOut": null,
+              "duration": 95,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var sum = 0;\ncy.get(\"tr td:nth-child(4) strong\").each(function ($e1, index, $list) {\n  // console.log($e1.text())\n  var price = $e1.text().split(\" \"); //console.log(price[1])\n  price = price[1].trim();\n  sum = Number(sum) + Number(price);\n}).then(function () {\n  cy.log(sum);\n});\nvar total = 0;\ncy.get(\"h3 strong\").then(function (element) {\n  total = element.text();\n  total = total.split(\" \");\n  total = total[1].trim();\n  cy.log(total);\n  expect(Number(total)).to.be.equal(sum);\n});",
+              "err": {},
+              "uuid": "de306eef-5d28-4eb3-8e46-5dc6d8a5e4e1",
+              "parentUUID": "0e1a232e-9918-4e12-94a2-62d09942f094",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "59905cbd-f338-4d09-90b3-37341d257d05",
+            "de306eef-5d28-4eb3-8e46-5dc6d8a5e4e1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7674,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.1.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {},
+      "version": "5.1.0"
+    }
+  }
+}

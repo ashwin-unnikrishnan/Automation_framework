@@ -1,4 +1,5 @@
 {
   "defaultCommandTimeout": 8000,
-  "projectId": "48h57d"
+  "projectId": "48h57d",
+  "reporter":"mochawesome"
 }

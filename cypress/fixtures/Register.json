@@ -2,9 +2,7 @@
     "name":"Ashwin",
     "gender": "Male",
     "email":"ashwin.uk09@gmail.com",
-    "product_name": ["Samsung Note 8","Blackberry"],
-    "supportFile" : "cypress\\support\\Dynamic_code.js",
-    "fixtureFile" : "cypress\\fixtures\\Register.json"
+    "product_name": ["Samsung Note 8","Blackberry"]
     
      
 }

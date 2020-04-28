@@ -53,11 +53,24 @@ class Homepage
                 cy.log($e1.text())
                 if($e1.text().includes("India"))
                 { 
-                    cy.get("[class='suggestions']").eq(index).click()
+                    cy.get("[class='suggestions']").eq(index).wait(2000).click()
                 } 
                 //cy.log("exited loop")
             })
             
+    }
+    split()
+    {
+        cy.get("tr td:nth-child(4) strong").each(($e1, index,$list) =>
+         {
+           // console.log($e1.text())
+            var price= $e1.text().split(" ")
+            //console.log(price[1])
+            price= price[1].trim()
+            sum=Number(sum)+Number(price)
+            console.log(sum)
+            
+         })
     }
 }
 export default Homepage;
