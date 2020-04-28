@@ -1,6 +1,6 @@
 ///reference types=cypress/>
 ///reference types=cypress-iframe/>
-import Homepage from '../page_object/Homepage'
+import Homepage from '../../../support/page_object/Homepage'
 const homepage= new Homepage()
 describe("Framework",function(){
     
